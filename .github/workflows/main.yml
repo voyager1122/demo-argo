@@ -33,12 +33,12 @@ jobs:
     - name: Helm Check
       uses: igabaydulin/helm-check-action@master
       env:
-          CHART_LOCATION: ./helm-example/
-          CHART_VALUES: ./helm-example/values.yaml
+          CHART_LOCATION: ./charts/helm-example/
+          CHART_VALUES: ./charts/helm-example/values.yaml
           
     - name: Lint Helm Charts
       run: |
-          helm lint ./helm-example/
+          helm lint ./charts/helm-example/
 
     - name: send telegram message on push
       uses: appleboy/telegram-action@master
